@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.color.DynamicColors
 import com.google.android.material.slider.Slider
 
 class VolumeSettingsActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class VolumeSettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
+        DynamicColors.applyToActivityIfAvailable(this)
         setContentView(R.layout.activity_volume_settings)
 
         audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
