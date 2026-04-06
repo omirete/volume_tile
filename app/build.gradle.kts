@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.volumetile"
+    namespace = "com.omirete.volumetile"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.volumetile"
+        applicationId = "com.omirete.volumetile"
         minSdk = 31
         targetSdk = 35
         versionCode = 1
@@ -17,7 +17,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -1,4 +1,4 @@
-package com.example.volumetile
+package com.omirete.volumetile
 
 import android.app.Activity
 import android.content.Intent
