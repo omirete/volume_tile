@@ -6,6 +6,7 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.slider.Slider
 
@@ -67,6 +68,10 @@ class VolumeSettingsActivity : AppCompatActivity() {
             icon.setOnClickListener {
                 toggleMute(row, slider, tvLevel, icon)
             }
+        }
+
+        findViewById<MaterialButton>(R.id.btnSoundSettings).setOnClickListener {
+            audioManager.adjustVolume(AudioManager.ADJUST_SAME, AudioManager.FLAG_SHOW_UI)
         }
     }
 
