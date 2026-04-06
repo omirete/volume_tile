@@ -1,14 +1,8 @@
 <resources>
     <string name="app_name">Volume Tile</string>
     <string name="tile_label">Volume</string>
-    <string name="label_stream">Audio stream</string>
-    <string name="label_volume">Volume</string>
-
-    <!-- Stream spinner entries — order must match VolumeSettingsActivity.STREAMS array -->
-    <string-array name="stream_names">
-        <item>Media</item>
-        <item>Ringtone</item>
-        <item>Alarm</item>
-        <item>Notification</item>
-    </string-array>
+    <string name="stream_media">Media</string>
+    <string name="stream_ring">Ring</string>
+    <string name="stream_alarm">Alarm</string>
+    <string name="stream_notification">Notification</string>
 </resources>
