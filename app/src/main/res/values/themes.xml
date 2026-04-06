@@ -1,0 +1,14 @@
+<resources>
+    <!-- Base application theme (needed by the manifest android:theme attribute) -->
+    <style name="Theme.VolumeTile" parent="Theme.MaterialComponents.DayNight.DarkActionBar" />
+
+    <!--
+        Dialog theme used by VolumeSettingsActivity.
+        Inherits from the Material dialog style so it renders as a floating card
+        over the current screen when launched from the QS panel.
+    -->
+    <style name="Theme.VolumeTile.Dialog" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+</resources>

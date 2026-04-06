@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tile_label"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Stream selection label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_stream"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Stream selector -->
+    <Spinner
+        android:id="@+id/spinnerStream"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Volume level label row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_volume"
+            android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+        <TextView
+            android:id="@+id/tvVolumeLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+    </LinearLayout>
+
+    <!-- Volume SeekBar -->
+    <SeekBar
+        android:id="@+id/seekBarVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>
