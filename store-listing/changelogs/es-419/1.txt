@@ -1,0 +1,2 @@
+• Agrega este botón de ajuste rápido para abrir el control de volumen nativo.
+• Mantén pulsado el botón de ajuste rápido para abrir el menú completo de configuración de audio.
