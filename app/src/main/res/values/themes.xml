@@ -11,5 +11,6 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowMinWidthMajor">85%</item>
         <item name="android:windowMinWidthMinor">85%</item>
+        <item name="android:windowBackground">@drawable/bg_dialog_rounded</item>
     </style>
 </resources>
