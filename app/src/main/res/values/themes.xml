@@ -1,16 +1,4 @@
 <resources>
     <!-- Base application theme -->
     <style name="Theme.VolumeTile" parent="Theme.Material3.DayNight" />
-
-    <!--
-        Dialog theme used by VolumeSettingsActivity.
-        Renders as a floating card over the current screen when launched from the QS panel.
-    -->
-    <style name="Theme.VolumeTile.Dialog" parent="Theme.Material3.DayNight.Dialog">
-        <item name="android:windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowMinWidthMajor">85%</item>
-        <item name="android:windowMinWidthMinor">85%</item>
-        <item name="android:windowBackground">@drawable/bg_dialog_rounded</item>
-    </style>
 </resources>

@@ -1,9 +1,4 @@
 <resources>
     <string name="app_name">Volume Tile</string>
     <string name="tile_label">Volume</string>
-    <string name="stream_media">Media</string>
-    <string name="stream_ring">Ring</string>
-    <string name="stream_alarm">Alarm</string>
-    <string name="stream_notification">Notification</string>
-    <string name="btn_sound_settings">Sound settings</string>
 </resources>

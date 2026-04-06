@@ -30,17 +30,15 @@
         </service>
 
         <!--
-            Volume settings screen launched when the user long-presses the tile.
-            ACTION_QS_TILE_PREFERENCES is the standard hook for tile preferences.
-            android:exported="true" is required so the system can start this activity.
-            The dialog theme makes it overlay the current screen instead of going full-screen.
+            Activity launched when the user long-presses the tile (ACTION_QS_TILE_PREFERENCES).
+            On tap it shows the system volume popup; on long-press it opens Sound settings.
         -->
         <activity
             android:name=".VolumeSettingsActivity"
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
-            android:theme="@style/Theme.VolumeTile.Dialog">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
