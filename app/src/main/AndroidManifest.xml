@@ -38,6 +38,8 @@
         <activity
             android:name=".VolumeSettingsActivity"
             android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
             android:theme="@style/Theme.VolumeTile.Dialog">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
