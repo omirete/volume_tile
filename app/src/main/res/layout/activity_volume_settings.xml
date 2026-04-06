@@ -38,11 +38,14 @@
             android:layout_marginBottom="8dp">
 
             <ImageView
+                android:id="@+id/iconMedia"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_stream_media"
                 android:tint="?attr/colorOnSurfaceVariant"
                 android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_marginEnd="0dp" />
 
             <com.google.android.material.slider.Slider
@@ -78,11 +81,14 @@
             android:layout_marginBottom="8dp">
 
             <ImageView
+                android:id="@+id/iconRing"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_stream_ring"
                 android:tint="?attr/colorOnSurfaceVariant"
-                android:contentDescription="@null" />
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/sliderRing"
@@ -117,11 +123,14 @@
             android:layout_marginBottom="8dp">
 
             <ImageView
+                android:id="@+id/iconAlarm"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_stream_alarm"
                 android:tint="?attr/colorOnSurfaceVariant"
-                android:contentDescription="@null" />
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/sliderAlarm"
@@ -155,11 +164,14 @@
             android:gravity="center_vertical">
 
             <ImageView
+                android:id="@+id/iconNotification"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_stream_notification"
                 android:tint="?attr/colorOnSurfaceVariant"
-                android:contentDescription="@null" />
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/sliderNotification"
