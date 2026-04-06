@@ -1,6 +1,8 @@
 package com.example.volumetile
 
-import android.media.AudioManager
+import android.app.PendingIntent
+import android.content.Intent
+import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
@@ -17,10 +19,6 @@ import android.service.quicksettings.TileService
  */
 class VolumeTileService : TileService() {
 
-    private val audioManager: AudioManager by lazy {
-        getSystemService(AUDIO_SERVICE) as AudioManager
-    }
-
     // -------------------------------------------------------------------------
     // TileService lifecycle
     // -------------------------------------------------------------------------
@@ -32,33 +30,31 @@ class VolumeTileService : TileService() {
 
     override fun onClick() {
         super.onClick()
-        val stream = selectedStream()
-        audioManager.adjustStreamVolume(stream, AudioManager.ADJUST_TOGGLE_MUTE, 0)
-        refreshTile()
+        val intent = Intent(this, VolumeSettingsActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            val pending = PendingIntent.getActivity(
+                this, 0, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+            startActivityAndCollapse(pending)
+        } else {
+            @Suppress("DEPRECATION")
+            startActivityAndCollapse(intent)
+        }
     }
 
     // -------------------------------------------------------------------------
     // Helpers
     // -------------------------------------------------------------------------
 
-    /** Updates the tile icon and state to reflect the current mute status. */
+    /** Keeps the tile in the active (coloured) state with the volume-on icon. */
     private fun refreshTile() {
         val tile = qsTile ?: return
-        val stream = selectedStream()
-        val isMuted = audioManager.isStreamMute(stream)
-
-        tile.state = if (isMuted) Tile.STATE_INACTIVE else Tile.STATE_ACTIVE
-        tile.icon = android.graphics.drawable.Icon.createWithResource(
-            this,
-            if (isMuted) R.drawable.ic_volume_off else R.drawable.ic_volume_on
-        )
+        tile.state = Tile.STATE_ACTIVE
+        tile.icon = android.graphics.drawable.Icon.createWithResource(this, R.drawable.ic_volume_on)
         tile.updateTile()
-    }
-
-    /** Returns the AudioManager stream constant saved by VolumeSettingsActivity. */
-    private fun selectedStream(): Int {
-        val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
-        return prefs.getInt(KEY_STREAM, AudioManager.STREAM_MUSIC)
     }
 
     companion object {
