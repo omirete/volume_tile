@@ -4,6 +4,9 @@
     <!-- Required to read and change audio stream volumes -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
+    <!-- Required to restore the tile state after a device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
@@ -43,6 +46,21 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
+
+        <!--
+            Restores the tile to STATE_ACTIVE after a device reboot.
+            android:exported="true" is required for the system to deliver the broadcast.
+            By default android:directBootAware is false, so this only fires after the
+            user unlocks the device (credential-encrypted storage is available), which
+            is fine here.
+        -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
